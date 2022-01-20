@@ -1,6 +1,9 @@
 <html>
     <body>
 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 <form action="{% url 'vote' question.id %}" method="post">
     {% csrf_token %}
     <fieldset>

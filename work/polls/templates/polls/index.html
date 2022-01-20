@@ -1,6 +1,7 @@
-<html>
 
-<body>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 {% block content %}
     {% if latest_question_list %}
         <ul>
@@ -15,5 +16,4 @@
 
 <marquee behavior="scroll" direction="right" scrollamount="12" bgcolor="red">WELCOME</marquee>
 <marquee behavior="scroll" direction="left" scrollamount="20" bgcolor="orange">django project</marquee>
-</body>
-</html>
+
