@@ -10,6 +10,7 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'detail' question.id %}">Vote again?</a>
+<a href="{% url 'detail' question.id %}"><img src="{% static 'polls/a1.gif' %}" alt="VOTE AGAIN" style="width:200px;height:100px;"></a>
+
 </body>
 </html>
