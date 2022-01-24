@@ -1,8 +1,10 @@
 li a {
-    color: black;
+    color: white;
 }
 body {
-       background: lightblue; url("Desktop/learning-python.jpg");
+       background: lightblue;
+       background-repeat:no-repeat;
+       background-size: cover;
 
 }
 h1{
@@ -10,9 +12,13 @@ h1{
 }
 li
 {
-    color: green;
+    color: white;
 }
 label
 {
     color: red;
+}
+a 
+{
+    color: yellow;
 }

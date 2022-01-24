@@ -1,7 +1,7 @@
-<html>
-    <body>
-
 {% load static %}
+<body style="background-image:url('{% static 'polls/p2.jpg' %}');">
+
+
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 <form action="{% url 'vote' question.id %}" method="post">
@@ -17,6 +17,4 @@
     <input type="submit" value="Vote" id="vote">
     </form>
     <marquee behavior="scroll" direction="right" scrollamount="2" bgcolor="white" style="border:10px solid crimson">VOTE HERE</marquee>
-
 </body> 
-</html>
