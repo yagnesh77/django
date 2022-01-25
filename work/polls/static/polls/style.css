@@ -35,3 +35,21 @@ a
       background-color: green;
       color: black; /* SET COLOR IN BLACK */
     }    
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 4px solid darkred;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: orange;
+}  
+tr:nth-child(odd) {
+  background-color: skyblue;
+}  

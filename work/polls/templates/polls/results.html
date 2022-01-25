@@ -10,7 +10,32 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'detail' question.id %}"><img src="{% static 'polls/a1.gif' %}" alt="VOTE AGAIN" style="width:200px;height:100px;"></a>
+
+<a href="{% url 'detail' question.id %}"><img src="{% static 'polls/a1.gif' %}" alt="VOTE AGAIN" style="width:200px;height:100px;"></a></br></br></br></br>
+
+
+<table>
+  <tr>
+    <th>CHOICE-1</th>
+    <th>CHOICE-2</th>
+    <th>CHOICE-3</th>
+  </tr>
+  <tr>
+ {% for choice in question.choice_set.all %}
+ <td>{{ choice.choice_text }}</td>
+    {% endfor %}
+</tr>
+<tr>
+    <th>VOTE NUMBER OF CHOICE-1</th>
+    <th>VOTE NUMBER OF CHOICE-2 </th>
+    <th>VOTE NUMBER OF CHOICE-3</th>
+  </tr>
+  <tr>
+ {% for choice in question.choice_set.all %}
+ <td>{{ choice.votes }} vote{{ choice.votes|pluralize }}</td>
+    {% endfor %}
+</tr>
+
 
 </body>
 </html>
