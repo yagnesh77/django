@@ -15,27 +15,17 @@
 
 
 <table>
-  <tr>
-    <th>CHOICE-1</th>
-    <th>CHOICE-2</th>
-    <th>CHOICE-3</th>
-  </tr>
-  <tr>
- {% for choice in question.choice_set.all %}
- <td>{{ choice.choice_text }}</td>
+    <tr>
+        <th>CHOICES</th>
+        <th>No of Votes</th>
+    </tr>
+    {% for choice in question.choice_set.all %}
+        <tr>
+            <td>{{ choice.choice_text }}</td>
+            <td>{{ choice.votes }} vote{{ choice.votes|pluralize }}</td>
+        </tr>
     {% endfor %}
-</tr>
-<tr>
-    <th>VOTE NUMBER OF CHOICE-1</th>
-    <th>VOTE NUMBER OF CHOICE-2 </th>
-    <th>VOTE NUMBER OF CHOICE-3</th>
-  </tr>
-  <tr>
- {% for choice in question.choice_set.all %}
- <td>{{ choice.votes }} vote{{ choice.votes|pluralize }}</td>
-    {% endfor %}
-</tr>
-
+</table>
 
 </body>
 </html>
