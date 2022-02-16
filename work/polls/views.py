@@ -1,13 +1,30 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-
+from datetime import datetime
 from .models import Choice, Question
+from django.views import View
+from .forms import ContactForm 
 
-def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    context = {'latest_question_list': latest_question_list,}
-    return render(request,'polls/index.html', context)
+class index(View):
+  def get(self,request):
+   latest_question_list = Question.objects.order_by('-pub_date')[:5]
+   form =ContactForm()
+   context = {'latest_question_list': latest_question_list, 'form': form}
+   return render(request,'polls/index.html', context)
+
+    
+
+  def post(self,request):
+    form =ContactForm(request.POST)
+    if form.is_valid():
+     a=form.save(commit=False)
+     a.pub_date=datetime.now()
+     a.save()
+      # when you make form through model and save this in database
+     print(form.cleaned_data['question_text'])
+     return HttpResponse('thanks')  
+    
 
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)

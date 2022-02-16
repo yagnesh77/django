@@ -15,6 +15,14 @@
         <p>No polls are available.</p>
     {% endif %}
 {% endblock %}
+
+<form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+   
+   {% csrf_token %}
+   {{form.as_p}}
+     <input type="submit" value="submit" class="btn btn-primary btn-lg">
+
+ </form>  
 <marquee behavior="scroll" direction="right" scrollamount="12" bgcolor="red">WELCOME</marquee>
 <marquee behavior="scroll" direction="left" scrollamount="20" bgcolor="orange">django project</marquee>
 
